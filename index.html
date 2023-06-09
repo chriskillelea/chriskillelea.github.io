@@ -4,6 +4,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
+        /* Added font-family rule */
+        body, h2, p {
+            font-family: 'Montserrat', sans-serif;
+        }
+
         .navbar {
             background-color: #f8f9fa;
             padding: 10px;
@@ -13,12 +18,14 @@
         .navbar-brand {
             font-size: 24px;
             font-weight: bold;
+            font-style: italic; /* Added font-style property */
         }
 
         .navbar-nav .nav-link {
             font-size: 16px;
             color: #333;
             margin-left: 20px;
+            font-style: italic; /* Added font-style property */
         }
 
         .navbar-nav .nav-link:hover {
@@ -73,10 +80,8 @@
             margin-bottom: 20px;
         }
 
-        
-
-        
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"> <!-- Added Google Fonts link -->
     <title>My Portfolio</title>
 </head>
 <body>
@@ -124,20 +129,27 @@
         <div class="container">
             <div class="row">
                 <div class="col text-center">
-                    <h2>About Me</h2>
-                    I am an experienced software developer with a background in team coordination within a fast-paced environment. My skill set includes proficiency in HTML, JavaScript, CSS, React, MySQL, NoSQL, Node.js, jQuery, Bootstrap, Sequelize, and MongoDB. I am highly committed, focused, and motivated to demonstrate my expertise in these areas. I am eager to showcase my skills and contribute to impactful projects.
-                </div>
+                    
+                    <p> 
+                    <p> 
+                    <h2><i>About Me</i></h2>
+                    I am an experienced software developer with a background in team coordination within a fast-paced environment. My skill set includes proficiency in 
+                    <strong><em><i>HTML, JavaScript, CSS, React, MySQL, NoSQL, Node.js, jQuery, Bootstrap, RESTful API, Sequelize, and MongoDB</i></em></strong>. 
+                    I am highly committed, focused, and motivated to demonstrate my expertise in these areas. I am eager to showcase my skills and contribute to impactful projects.                </div>
             </div>
         </div>
     </section>
     <!-- About (end) -->
+    
+    
 
     <!-- Projects -->
 <section id="projects" class="bg-light">
     <div class="container">
         <div class="row">
             <div class="col">
-                <h2 class="text-center">Projects</h2>
+            <p> 
+                <h2 class="text-center"><i>Projects</i></h2>
             </div>
         </div>
         <div class="row">
@@ -205,7 +217,8 @@
     <div class="container">
         <div class="row">
             <div class="col text-center">
-                <h2>Contact</h2>
+            <p> 
+                <h2><i>Contact</i></h2>
                 <p>Say Hi!</p>
                 <form id="contactForm">
                     <div class="form-group">
