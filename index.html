@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
         /* Added font-family rule */
         body, h2, p {
@@ -16,9 +16,10 @@
         }
 
         .navbar-brand {
-            font-size: 24px;
+            font-size: 22px; /* Increased font size */
             font-weight: bold;
             font-style: italic; /* Added font-style property */
+            white-space: normal; /* Allow text to wrap */
         }
 
         .navbar-nav .nav-link {
@@ -80,14 +81,49 @@
             margin-bottom: 20px;
         }
 
+        @media (min-width: 992px) {
+        .col.text-center {
+            max-width: 400px; /* Adjust the width as needed */
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    /* Added CSS for the popup */
+    .popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  z-index: 9999;
+  animation: fadeOut 3s 2.4s forwards;
+  width: 150px; /* Added fixed width */
+  text-align: center; /* Center the text */
+}
+
+
+    @keyframes fadeOut {
+        from { opacity: 1; }
+        to { opacity: 0; }
+    }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"> <!-- Added Google Fonts link -->
     <title>My Portfolio</title>
 </head>
 <body>
+    <!-- Hello Popup -->
+    <div class="popup">
+        <h1>Hello!</h1>
+    </div>
+    <!-- Hello Popup (end) -->
     <!-- Header -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Christian Killelea - Software Developer</a>
+        <a class="navbar-brand" href="#" title="Christian Killelea - Software Developer">Christian Killelea - Software Developer</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -111,6 +147,10 @@
     </nav>
     <!-- Header (end) -->
 
+
+
+    
+
     <!-- Home -->
     <section id="home" class="bg-primary text-light text-center">
         <div class="container">
@@ -125,21 +165,22 @@
     <!-- Home (end) -->
 
     <!-- About -->
-    <section id="about" class="bg-light">
-        <div class="container">
-            <div class="row">
-                <div class="col text-center">
-                    
-                    <p> 
-                    <p> 
-                    <h2><i>About Me</i></h2>
+<section id="about" class="bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2 text-center"> <!-- Modified: Added col-md-8 and offset-md-2 -->
+               <p></p>
+                <h2><i>About Me</i></h2>
+                <p class="text-justify"> <!-- Added text-justify class -->
                     I am an experienced software developer with a background in team coordination within a fast-paced environment. My skill set includes proficiency in 
                     <strong><em><i>HTML, JavaScript, CSS, React, MySQL, NoSQL, Node.js, jQuery, Bootstrap, RESTful API, Sequelize, and MongoDB</i></em></strong>. 
-                    I am highly committed, focused, and motivated to demonstrate my expertise in these areas. I am eager to showcase my skills and contribute to impactful projects.                </div>
+                    I am highly committed, focused, and motivated to demonstrate my expertise in these areas. I am eager to showcase my skills and contribute to impactful projects.
+                </p>
             </div>
         </div>
-    </section>
-    <!-- About (end) -->
+    </div>
+</section>
+<!-- About (end) -->
     
     
 
@@ -158,12 +199,13 @@
                     <div class="project-image">
                         <img src="https://github.com/boushka9/task-tally/blob/main/client/src/assets/logo-1.png?raw=true" alt="Project" class="card-img-top">
                         <div class="card-overlay">
-                            <div class="card-overlay-text">Task-Tally</div>
+                            <div class="card-overlay-text">Task Tally</div>
                         </div>
                     </div>
                     <div class="card-body text-center">
-                        <h5 class="card-title">Task-Tally</h5>
+                        <h5 class="card-title">Task Tally</h5>
                         <a href="https://task-tally.herokuapp.com/" class="btn btn-primary">Project Website</a>
+                        <p></p>
                         <a href="https://github.com/boushka9/task-tally.git" class="btn btn-secondary">Source Code</a>
                     </div>
                 </div>
@@ -181,6 +223,7 @@
                     <div class="card-body text-center">
                         <h5 class="card-title">Game Connoisseur</h5>
                         <a href="https://game-connoisseur.herokuapp.com/" class="btn btn-primary">Project Website</a>
+                        <p></p>
                         <a href="https://github.com/boushka9/game-connoisseur" class="btn btn-secondary">Source Code</a>
                     </div>
                 </div>
@@ -198,6 +241,7 @@
                     <div class="card-body text-center">
                         <h5 class="card-title">Last Minute Plans</h5>
                         <a href="https://boushka9.github.io/last-minute-plans/" class="btn btn-primary">Project Website</a>
+                        <p></p>
                         <a href="https://github.com/boushka9/last-minute-plans.git" class="btn btn-secondary">Source Code</a>
                     </div>
                 </div>
@@ -228,7 +272,7 @@
                     <center>  <input type="email" class="col text-center form-control form-control-sm" placeholder="Email" id="emailInput"> </center>
                     </div>
                     <div class="form-group">
-                        <textarea class="col text-centerform-control form-control-sm" rows="5" placeholder="Message" id="messageInput"></textarea>
+                        <textarea class="col text-center form-control form-control-sm" rows="5" placeholder="Message" id="messageInput"></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Send</button>
                 </form>
@@ -239,6 +283,7 @@
 <!-- Contact (end) -->
 
 <script>
+    
     document.getElementById('contactForm').addEventListener('submit', function(event) {
         event.preventDefault(); // Prevent form submission
 
@@ -261,6 +306,65 @@
         // Open email client
         window.location.href = mailtoUrl;
     });
+ // Wait for the page to fully load
+ window.addEventListener('load', function () {
+    // Get the popup element
+    var popup = document.querySelector('.popup');
+
+    // Show the popup
+    popup.style.display = 'block';
+
+    // Fade in the popup
+    popup.style.opacity = '0';
+    var fadeInInterval = setInterval(function () {
+      popup.style.opacity = parseFloat(popup.style.opacity) + 0.1;
+      if (parseFloat(popup.style.opacity) >= 1) {
+        clearInterval(fadeInInterval);
+        // Wait for 2 seconds and fade out the popup
+        setTimeout(function () {
+          var fadeOutInterval = setInterval(function () {
+            popup.style.opacity = parseFloat(popup.style.opacity) - 0.1;
+            if (parseFloat(popup.style.opacity) <= 0) {
+              clearInterval(fadeOutInterval);
+              // Hide the popup
+              popup.style.display = 'none';
+            }
+          }, 1000);
+        }, 4000);
+      }
+    }, 50);
+
+    // Set the initial text of the popup to "Typing..."
+    popup.textContent = '';
+
+    // Define the word to be typed
+    var word = 'Typing...';
+    var currentIndex = 0;
+
+    // Function to display the characters with a typing effect
+    function typeCharacters() {
+      if (currentIndex < word.length) {
+        popup.textContent += word.charAt(currentIndex);
+        currentIndex++;
+        setTimeout(typeCharacters, 150); // Adjust typing speed (in milliseconds) here
+      } else {
+        // Wait for 1 second and change the popup text to "Hello!"
+        setTimeout(function () {
+          popup.textContent = 'Hello!';
+        }, 500);
+      }
+    }
+
+    // Start typing the characters
+    typeCharacters();
+  });
+
+
+
+
+
+
+
 </script>
 
 
